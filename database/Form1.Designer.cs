@@ -2,15 +2,8 @@
 {
     partial class Form1
     {
-        /// <summary>
-        ///  Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        ///  Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,132 +13,183 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            button_sach = new Button();
-            button_theloai = new Button();
-            buttonPhieuKho = new Button();
-            buttonNhanVien = new Button();
-            buttonKhachHang = new Button();
-            buttonHangTonKho = new Button();
-            buttonDonHang = new Button();
-            buttonChiTietDonHang = new Button();
+            menuStrip = new MenuStrip();
+            menuQuanLyDuLieu = new ToolStripMenuItem();
+            menuSach = new ToolStripMenuItem();
+            menuTheLoai = new ToolStripMenuItem();
+            menuNhanVien = new ToolStripMenuItem();
+            menuKhachHang = new ToolStripMenuItem();
+            truyVấnDữLiệuToolStripMenuItem = new ToolStripMenuItem();
+            menuQuanLyKho = new ToolStripMenuItem();
+            menuPhieuKho = new ToolStripMenuItem();
+            menuHangTonKho = new ToolStripMenuItem();
+            menuQuanLyDonHang = new ToolStripMenuItem();
+            menuDonHang = new ToolStripMenuItem();
+            menuChiTietDonHang = new ToolStripMenuItem();
+            lblTitle = new Label();
+            dataGridViewData1 = new DataGridView();
+            truyVấnToolStripMenuItem = new ToolStripMenuItem();
+            menuStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewData1).BeginInit();
             SuspendLayout();
             // 
-            // button_sach
+            // menuStrip
             // 
-            button_sach.Location = new Point(128, 182);
-            button_sach.Name = "button_sach";
-            button_sach.Size = new Size(94, 29);
-            button_sach.TabIndex = 0;
-            button_sach.Text = "Sách";
-            button_sach.UseVisualStyleBackColor = true;
-            button_sach.Click += button_sach_Click;
+            menuStrip.ImageScalingSize = new Size(20, 20);
+            menuStrip.Items.AddRange(new ToolStripItem[] { menuQuanLyDuLieu, menuQuanLyKho, menuQuanLyDonHang, truyVấnToolStripMenuItem });
+            menuStrip.Location = new Point(0, 0);
+            menuStrip.Name = "menuStrip";
+            menuStrip.Size = new Size(959, 28);
+            menuStrip.TabIndex = 0;
             // 
-            // button_theloai
+            // menuQuanLyDuLieu
             // 
-            button_theloai.Location = new Point(228, 182);
-            button_theloai.Name = "button_theloai";
-            button_theloai.Size = new Size(94, 29);
-            button_theloai.TabIndex = 1;
-            button_theloai.Text = "Thể Loại";
-            button_theloai.UseVisualStyleBackColor = true;
-            button_theloai.Click += button_theloai_Click;
+            menuQuanLyDuLieu.DropDownItems.AddRange(new ToolStripItem[] { menuSach, menuTheLoai, menuNhanVien, menuKhachHang, truyVấnDữLiệuToolStripMenuItem });
+            menuQuanLyDuLieu.Name = "menuQuanLyDuLieu";
+            menuQuanLyDuLieu.Size = new Size(130, 24);
+            menuQuanLyDuLieu.Text = "Quản Lý Dữ Liệu";
             // 
-            // buttonPhieuKho
+            // menuSach
             // 
-            buttonPhieuKho.Location = new Point(328, 182);
-            buttonPhieuKho.Name = "buttonPhieuKho";
-            buttonPhieuKho.Size = new Size(94, 29);
-            buttonPhieuKho.TabIndex = 2;
-            buttonPhieuKho.Text = "Phiếu Kho";
-            buttonPhieuKho.UseVisualStyleBackColor = true;
-            buttonPhieuKho.Click += buttonPhieuKho_Click;
+            menuSach.Name = "menuSach";
+            menuSach.Size = new Size(203, 26);
+            menuSach.Text = "Sách";
+            menuSach.Click += menuSach_Click;
             // 
-            // buttonNhanVien
+            // menuTheLoai
             // 
-            buttonNhanVien.Location = new Point(428, 182);
-            buttonNhanVien.Name = "buttonNhanVien";
-            buttonNhanVien.Size = new Size(94, 29);
-            buttonNhanVien.TabIndex = 3;
-            buttonNhanVien.Text = "Nhân Viên";
-            buttonNhanVien.UseVisualStyleBackColor = true;
-            buttonNhanVien.Click += buttonNhanVien_Click;
+            menuTheLoai.Name = "menuTheLoai";
+            menuTheLoai.Size = new Size(203, 26);
+            menuTheLoai.Text = "Thể Loại";
+            menuTheLoai.Click += menuTheLoai_Click;
             // 
-            // buttonKhachHang
+            // menuNhanVien
             // 
-            buttonKhachHang.Location = new Point(528, 182);
-            buttonKhachHang.Name = "buttonKhachHang";
-            buttonKhachHang.Size = new Size(94, 29);
-            buttonKhachHang.TabIndex = 4;
-            buttonKhachHang.Text = "Khách Hàng";
-            buttonKhachHang.UseVisualStyleBackColor = true;
-            buttonKhachHang.Click += buttonKhachHang_Click;
+            menuNhanVien.Name = "menuNhanVien";
+            menuNhanVien.Size = new Size(203, 26);
+            menuNhanVien.Text = "Nhân Viên";
+            menuNhanVien.Click += menuNhanVien_Click;
             // 
-            // buttonHangTonKho
+            // menuKhachHang
             // 
-            buttonHangTonKho.Location = new Point(228, 217);
-            buttonHangTonKho.Name = "buttonHangTonKho";
-            buttonHangTonKho.Size = new Size(117, 29);
-            buttonHangTonKho.TabIndex = 5;
-            buttonHangTonKho.Text = "Hàng Tồn Kho";
-            buttonHangTonKho.UseVisualStyleBackColor = true;
-            buttonHangTonKho.Click += buttonHangTonKho_Click;
+            menuKhachHang.Name = "menuKhachHang";
+            menuKhachHang.Size = new Size(203, 26);
+            menuKhachHang.Text = "Khách Hàng";
+            menuKhachHang.Click += menuKhachHang_Click;
             // 
-            // buttonDonHang
+            // truyVấnDữLiệuToolStripMenuItem
             // 
-            buttonDonHang.Location = new Point(351, 217);
-            buttonDonHang.Name = "buttonDonHang";
-            buttonDonHang.Size = new Size(94, 29);
-            buttonDonHang.TabIndex = 6;
-            buttonDonHang.Text = "Đơn Hàng";
-            buttonDonHang.UseVisualStyleBackColor = true;
-            buttonDonHang.Click += buttonDonHang_Click;
+            truyVấnDữLiệuToolStripMenuItem.Name = "truyVấnDữLiệuToolStripMenuItem";
+            truyVấnDữLiệuToolStripMenuItem.Size = new Size(203, 26);
+            truyVấnDữLiệuToolStripMenuItem.Text = "Truy Vấn Dữ Liệu";
             // 
-            // buttonChiTietDonHang
+            // menuQuanLyKho
             // 
-            buttonChiTietDonHang.Location = new Point(280, 252);
-            buttonChiTietDonHang.Name = "buttonChiTietDonHang";
-            buttonChiTietDonHang.Size = new Size(142, 29);
-            buttonChiTietDonHang.TabIndex = 7;
-            buttonChiTietDonHang.Text = "Chi Tiết Đơn Hàng";
-            buttonChiTietDonHang.UseVisualStyleBackColor = true;
-            buttonChiTietDonHang.Click += buttonChiTietDonHang_Click;
+            menuQuanLyKho.DropDownItems.AddRange(new ToolStripItem[] { menuPhieuKho, menuHangTonKho });
+            menuQuanLyKho.Name = "menuQuanLyKho";
+            menuQuanLyKho.Size = new Size(105, 24);
+            menuQuanLyKho.Text = "Quản Lý Kho";
+            // 
+            // menuPhieuKho
+            // 
+            menuPhieuKho.Name = "menuPhieuKho";
+            menuPhieuKho.Size = new Size(187, 26);
+            menuPhieuKho.Text = "Phiếu Kho";
+            menuPhieuKho.Click += menuPhieuKho_Click;
+            // 
+            // menuHangTonKho
+            // 
+            menuHangTonKho.Name = "menuHangTonKho";
+            menuHangTonKho.Size = new Size(187, 26);
+            menuHangTonKho.Text = "Hàng Tồn Kho";
+            menuHangTonKho.Click += menuHangTonKho_Click;
+            // 
+            // menuQuanLyDonHang
+            // 
+            menuQuanLyDonHang.DropDownItems.AddRange(new ToolStripItem[] { menuDonHang, menuChiTietDonHang });
+            menuQuanLyDonHang.Name = "menuQuanLyDonHang";
+            menuQuanLyDonHang.Size = new Size(147, 24);
+            menuQuanLyDonHang.Text = "Quản Lý Đơn Hàng";
+            // 
+            // menuDonHang
+            // 
+            menuDonHang.Name = "menuDonHang";
+            menuDonHang.Size = new Size(214, 26);
+            menuDonHang.Text = "Đơn Hàng";
+            menuDonHang.Click += menuDonHang_Click;
+            // 
+            // menuChiTietDonHang
+            // 
+            menuChiTietDonHang.Name = "menuChiTietDonHang";
+            menuChiTietDonHang.Size = new Size(214, 26);
+            menuChiTietDonHang.Text = "Chi Tiết Đơn Hàng";
+            menuChiTietDonHang.Click += menuChiTietDonHang_Click;
+            // 
+            // lblTitle
+            // 
+            lblTitle.Anchor = AnchorStyles.Top;
+            lblTitle.Font = new Font("Arial", 16F, FontStyle.Bold);
+            lblTitle.ImageAlign = ContentAlignment.TopCenter;
+            lblTitle.Location = new Point(247, 57);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(394, 32);
+            lblTitle.TabIndex = 3;
+            lblTitle.Text = "Hệ Thống Quản Lý Bán Sách";
+            lblTitle.TextAlign = ContentAlignment.MiddleCenter;
+            lblTitle.Click += lblTitle_Click;
+            // 
+            // dataGridViewData1
+            // 
+            dataGridViewData1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewData1.Location = new Point(12, 135);
+            dataGridViewData1.Name = "dataGridViewData1";
+            dataGridViewData1.RowHeadersWidth = 51;
+            dataGridViewData1.Size = new Size(935, 413);
+            dataGridViewData1.TabIndex = 4;
+            // 
+            // truyVấnToolStripMenuItem
+            // 
+            truyVấnToolStripMenuItem.Name = "truyVấnToolStripMenuItem";
+            truyVấnToolStripMenuItem.Size = new Size(79, 24);
+            truyVấnToolStripMenuItem.Text = "Truy Vấn";
+            truyVấnToolStripMenuItem.Click += truyVấnToolStripMenuItem_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(buttonChiTietDonHang);
-            Controls.Add(buttonDonHang);
-            Controls.Add(buttonHangTonKho);
-            Controls.Add(buttonKhachHang);
-            Controls.Add(buttonNhanVien);
-            Controls.Add(buttonPhieuKho);
-            Controls.Add(button_theloai);
-            Controls.Add(button_sach);
+            ClientSize = new Size(959, 556);
+            Controls.Add(dataGridViewData1);
+            Controls.Add(lblTitle);
+            Controls.Add(menuStrip);
+            MainMenuStrip = menuStrip;
             Name = "Form1";
-            Text = "Form1";
+            Text = "Hệ Thống Quản Lý Bán Sách";
+            Load += Form1_Load;
+            menuStrip.ResumeLayout(false);
+            menuStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewData1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
-        #endregion
-
-        private Button btn_Sach;
-        private Button button_sach;
-        private Button button_theloai;
-        private Button buttonPhieuKho;
-        private Button buttonNhanVien;
-        private Button buttonKhachHang;
-        private Button buttonHangTonKho;
-        private Button buttonDonHang;
-        private Button buttonChiTietDonHang;
+        private MenuStrip menuStrip;
+        private ToolStripMenuItem menuQuanLyDuLieu;
+        private ToolStripMenuItem menuSach;
+        private ToolStripMenuItem menuTheLoai;
+        private ToolStripMenuItem menuNhanVien;
+        private ToolStripMenuItem menuKhachHang;
+        private ToolStripMenuItem menuQuanLyKho;
+        private ToolStripMenuItem menuPhieuKho;
+        private ToolStripMenuItem menuHangTonKho;
+        private ToolStripMenuItem menuQuanLyDonHang;
+        private ToolStripMenuItem menuDonHang;
+        private ToolStripMenuItem menuChiTietDonHang;
+        private Label lblTitle;
+        private DataGridView dataGridViewData1;
+        private ToolStripMenuItem truyVấnDữLiệuToolStripMenuItem;
+        private ToolStripMenuItem truyVấnToolStripMenuItem;
     }
 }
