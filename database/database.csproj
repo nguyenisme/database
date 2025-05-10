@@ -12,4 +12,28 @@
     <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="PhieuKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="NhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="KhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="HangTonKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DonHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ChiTietDonHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TheLoai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+
 </Project>
