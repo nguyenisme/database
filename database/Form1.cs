@@ -21,49 +21,45 @@ namespace database
         {
             InitializeComponent();
         }
-
         private void menuSach_Click(object sender, EventArgs e)
         {
             Sach sach = new Sach();
+            sach.OnDataUpdated = () =>
+            {
+                RefreshData();
+            };
             sach.ShowDialog();
         }
-
         private void menuTheLoai_Click(object sender, EventArgs e)
         {
             TheLoai theLoai = new TheLoai();
             theLoai.ShowDialog();
         }
-
         private void menuPhieuKho_Click(object sender, EventArgs e)
         {
             PhieuKho phieuKho = new PhieuKho();
             phieuKho.ShowDialog();
         }
-
         private void menuNhanVien_Click(object sender, EventArgs e)
         {
             NhanVien nhanVien = new NhanVien();
             nhanVien.ShowDialog();
         }
-
         private void menuKhachHang_Click(object sender, EventArgs e)
         {
             KhachHang khachHang = new KhachHang();
             khachHang.ShowDialog();
         }
-
         private void menuHangTonKho_Click(object sender, EventArgs e)
         {
             HangTonKho hangTonKho = new HangTonKho();
             hangTonKho.ShowDialog();
         }
-
         private void menuDonHang_Click(object sender, EventArgs e)
         {
             DonHang donHang = new DonHang();
             donHang.ShowDialog();
         }
-
         private void menuChiTietDonHang_Click(object sender, EventArgs e)
         {
             ChiTietDonHang chiTietDonHang = new ChiTietDonHang();
@@ -87,8 +83,9 @@ namespace database
             adapter.Fill(dt);
             dataGridViewData1.ReadOnly = true;
             dataGridViewData1.DataSource = dt;
-        }
+            dataGridViewData1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
+        }
         private void lblTitle_Click(object sender, EventArgs e)
         {
 
@@ -98,6 +95,10 @@ namespace database
         {
             TruyVanDuLieu truyVanDuLieu = new TruyVanDuLieu();
             truyVanDuLieu.ShowDialog();
+        }
+        public void RefreshData()
+        {
+            LoadData();
         }
     }
 }

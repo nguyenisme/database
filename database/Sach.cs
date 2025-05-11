@@ -17,6 +17,8 @@ namespace database
         SqlConnection conn;
         SqlDataAdapter adapter;
         DataTable dt;
+        public Action OnDataUpdated;
+
         public Sach()
         {
             InitializeComponent();
@@ -40,6 +42,7 @@ namespace database
             adapter.Fill(dt);
 
             dataGridView1.DataSource = dt;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -47,6 +50,9 @@ namespace database
             {
                 adapter.Update(dt);
                 MessageBox.Show("Đã lưu thay đổi!");
+                OnDataUpdated?.Invoke();
+
+                
             }
             catch (Exception ex)
             {

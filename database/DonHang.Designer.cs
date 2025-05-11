@@ -40,12 +40,12 @@
             dataGridView1.Location = new Point(12, 74);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(341, 329);
+            dataGridView1.Size = new Size(1007, 329);
             dataGridView1.TabIndex = 0;
             // 
             // btnSave
             // 
-            btnSave.Location = new Point(159, 409);
+            btnSave.Location = new Point(825, 409);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(94, 29);
             btnSave.TabIndex = 1;
@@ -55,7 +55,7 @@
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(259, 409);
+            btnDelete.Location = new Point(925, 409);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(94, 29);
             btnDelete.TabIndex = 2;
@@ -67,12 +67,12 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(365, 450);
+            ClientSize = new Size(1031, 450);
             Controls.Add(btnDelete);
             Controls.Add(btnSave);
             Controls.Add(dataGridView1);
             Name = "DonHang";
-            Text = "Sach";
+            Text = "DonHang";
             Load += Sach_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);

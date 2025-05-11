@@ -40,6 +40,7 @@ namespace database
             adapter.Fill(dt);
 
             dataGridView1.DataSource = dt;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
         private void btnSave_Click(object sender, EventArgs e)
         {

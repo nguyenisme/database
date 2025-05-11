@@ -72,7 +72,7 @@
             Controls.Add(btnSave);
             Controls.Add(dataGridView1);
             Name = "PhieuKho";
-            Text = "Sach";
+            Text = "PhieuKho";
             Load += Sach_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);

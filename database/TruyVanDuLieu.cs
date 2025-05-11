@@ -163,6 +163,7 @@ namespace database
                         dataGridViewResults.Columns["TenKhachHang"].HeaderText = "Tên Khách Hàng";
                         dataGridViewResults.Columns["SoDonHang"].HeaderText = "Số Đơn Hàng";
                     }
+                    dataGridViewResults.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 }
             }
             catch (Exception ex)
