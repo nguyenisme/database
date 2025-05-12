@@ -13,7 +13,7 @@ namespace database
 {
     public partial class TheLoai : Form
     {
-        string connectionString = @"Server=DESKTOP-555IDLF\NGUYEN;Database=Nghia;Trusted_Connection=True;";
+        string connectionString = @"Server=DESKTOP-555IDLF\NGUYEN;Database=dtb;Trusted_Connection=True;";
         SqlConnection conn;
         SqlDataAdapter adapter;
         DataTable dt;
@@ -28,7 +28,7 @@ namespace database
         }
         private void LoadData()
         {
-            string connectionString = @"Server=DESKTOP-555IDLF\NGUYEN;Database=Nghia;Trusted_Connection=True;";
+            string connectionString = @"Server=DESKTOP-555IDLF\NGUYEN;Database=dtb;Trusted_Connection=True;";
             conn = new SqlConnection(connectionString);
 
             string query = "SELECT * FROM TheLoai";

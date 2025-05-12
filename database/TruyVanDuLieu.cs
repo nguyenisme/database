@@ -13,7 +13,7 @@ namespace database
 {
     public partial class TruyVanDuLieu : Form
     {
-        private readonly string connectionString = "Server=DESKTOP-555IDLF\\NGUYEN;Database=Nghia;Trusted_Connection=True;";
+        private readonly string connectionString = "Server=DESKTOP-555IDLF\\NGUYEN;Database=dtb;Trusted_Connection=True;";
 
         public TruyVanDuLieu()
         {
@@ -53,6 +53,123 @@ namespace database
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            //string selectedQuery = comboBoxQueryType.SelectedItem?.ToString();
+            //string orderId = textBoxOrderId.Text.Trim();
+
+            //// Kiểm tra MaDonHang khi cần
+            //if ((selectedQuery == "Chi tiết đơn hàng" || selectedQuery == "Tổng tiền đơn hàng") && string.IsNullOrEmpty(orderId))
+            //{
+            //    MessageBox.Show("Vui lòng nhập số đơn hàng (MaDonHang).", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return;
+            //}
+
+            //try
+            //{
+            //    using (SqlConnection conn = new SqlConnection(connectionString))
+            //    {
+            //        conn.Open();
+            //        string query = "";
+            //        SqlDataAdapter adapter = new SqlDataAdapter();
+
+            //        switch (selectedQuery)
+            //        {
+            //            case "Danh sách đơn hàng":
+            //                query = @"
+            //                    SELECT dh.MaDonHang, dh.NgayDatHang, kh.TenKhachHang
+            //                    FROM DonHang dh
+            //                    JOIN KhachHang kh ON dh.MaKhachHang = kh.MaKhachHang";
+            //                break;
+
+            //            case "Chi tiết đơn hàng":
+            //                query = @"
+            //                    SELECT ct.MaChiTiet, s.TenSach, ct.SoLuong, ct.DonGia, (ct.SoLuong * ct.DonGia) AS ThanhTien
+            //                    FROM ChiTietDonHang ct
+            //                    JOIN Sach s ON ct.MaSach = s.MaSach
+            //                    WHERE ct.MaDonHang = @MaDonHang";
+            //                adapter.SelectCommand = new SqlCommand(query, conn);
+            //                adapter.SelectCommand.Parameters.AddWithValue("@MaDonHang", orderId);
+            //                break;
+
+            //            case "Tổng tiền đơn hàng":
+            //                query = @"
+            //                    SELECT MaDonHang, SUM(SoLuong * DonGia) AS TongTien
+            //                    FROM ChiTietDonHang
+            //                    WHERE MaDonHang = @MaDonHang
+            //                    GROUP BY MaDonHang";
+            //                adapter.SelectCommand = new SqlCommand(query, conn);
+            //                adapter.SelectCommand.Parameters.AddWithValue("@MaDonHang", orderId);
+            //                break;
+
+            //            case "Top 5 sách bán chạy":
+            //                query = @"
+            //                    SELECT s.MaSach, s.TenSach, SUM(ct.SoLuong) AS TongBan
+            //                    FROM ChiTietDonHang ct
+            //                    JOIN Sach s ON ct.MaSach = s.MaSach
+            //                    GROUP BY s.MaSach, s.TenSach
+            //                    ORDER BY TongBan DESC
+            //                    OFFSET 0 ROWS FETCH NEXT 5 ROWS ONLY";
+            //                break;
+
+            //            case "Khách hàng mua nhiều nhất":
+            //                query = @"
+            //                    SELECT kh.MaKhachHang, kh.TenKhachHang, COUNT(dh.MaDonHang) AS SoDonHang
+            //                    FROM KhachHang kh
+            //                    JOIN DonHang dh ON kh.MaKhachHang = dh.MaKhachHang
+            //                    GROUP BY kh.MaKhachHang, kh.TenKhachHang
+            //                    ORDER BY SoDonHang DESC
+            //                    OFFSET 0 ROWS FETCH NEXT 4 ROWS ONLY";
+            //                break;
+            //        }
+
+            //        if (string.IsNullOrEmpty(query))
+            //            return;
+
+            //        if (adapter.SelectCommand == null)
+            //            adapter.SelectCommand = new SqlCommand(query, conn);
+
+            //        DataTable dt = new DataTable();
+            //        adapter.Fill(dt);
+            //        dataGridViewResults.DataSource = dt;
+
+            //        // Tùy chỉnh tiêu đề cột
+            //        if (selectedQuery == "Danh sách đơn hàng")
+            //        {
+            //            dataGridViewResults.Columns["MaDonHang"].HeaderText = "Mã Đơn Hàng";
+            //            dataGridViewResults.Columns["NgayDatHang"].HeaderText = "Ngày Đặt Hàng";
+            //            dataGridViewResults.Columns["TenKhachHang"].HeaderText = "Tên Khách Hàng";
+            //        }
+            //        else if (selectedQuery == "Chi tiết đơn hàng")
+            //        {
+            //            dataGridViewResults.Columns["MaChiTiet"].HeaderText = "Mã Chi Tiết";
+            //            dataGridViewResults.Columns["TenSach"].HeaderText = "Tên Sách";
+            //            dataGridViewResults.Columns["SoLuong"].HeaderText = "Số Lượng";
+            //            dataGridViewResults.Columns["DonGia"].HeaderText = "Đơn Giá";
+            //            dataGridViewResults.Columns["ThanhTien"].HeaderText = "Thành Tiền";
+            //        }
+            //        else if (selectedQuery == "Tổng tiền đơn hàng")
+            //        {
+            //            dataGridViewResults.Columns["MaDonHang"].HeaderText = "Mã Đơn Hàng";
+            //            dataGridViewResults.Columns["TongTien"].HeaderText = "Tổng Tiền";
+            //        }
+            //        else if (selectedQuery == "Top 5 sách bán chạy")
+            //        {
+            //            dataGridViewResults.Columns["MaSach"].HeaderText = "Mã Sách";
+            //            dataGridViewResults.Columns["TenSach"].HeaderText = "Tên Sách";
+            //            dataGridViewResults.Columns["TongBan"].HeaderText = "Tổng Bán";
+            //        }
+            //        else if (selectedQuery == "Khách hàng mua nhiều nhất")
+            //        {
+            //            dataGridViewResults.Columns["MaKhachHang"].HeaderText = "Mã Khách Hàng";
+            //            dataGridViewResults.Columns["TenKhachHang"].HeaderText = "Tên Khách Hàng";
+            //            dataGridViewResults.Columns["SoDonHang"].HeaderText = "Số Đơn Hàng";
+            //        }
+            //        dataGridViewResults.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show($"Lỗi khi thực hiện truy vấn: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
             string selectedQuery = comboBoxQueryType.SelectedItem?.ToString();
             string orderId = textBoxOrderId.Text.Trim();
 
@@ -75,49 +192,64 @@ namespace database
                     {
                         case "Danh sách đơn hàng":
                             query = @"
-                                SELECT dh.MaDonHang, dh.NgayDatHang, kh.TenKhachHang
-                                FROM DonHang dh
-                                JOIN KhachHang kh ON dh.MaKhachHang = kh.MaKhachHang";
+                        SELECT 
+                            dh.MaDonHang,
+                            dh.NgayDatHang,
+                            dh.TongTien,
+                            dh.TrangThai,
+                            kh.HoTen AS TenKhachHang
+                        FROM DonHang dh
+                        JOIN KhachHang kh ON dh.MaKhachHang = kh.MaKhachHang";
                             break;
 
                         case "Chi tiết đơn hàng":
                             query = @"
-                                SELECT ct.MaChiTiet, s.TenSach, ct.SoLuong, ct.DonGia, (ct.SoLuong * ct.DonGia) AS ThanhTien
-                                FROM ChiTietDonHang ct
-                                JOIN Sach s ON ct.MaSach = s.MaSach
-                                WHERE ct.MaDonHang = @MaDonHang";
+                        SELECT 
+                            ctdh.MaChiTietDonHang,
+                            s.TenSach,
+                            ctdh.SoLuong,
+                            ctdh.DonGia,
+                            ctdh.ThanhTien
+                        FROM ChiTietDonHang ctdh
+                        JOIN Sach s ON ctdh.MaSach = s.MaSach
+                        WHERE ctdh.MaDonHang = @MaDonHang";
                             adapter.SelectCommand = new SqlCommand(query, conn);
                             adapter.SelectCommand.Parameters.AddWithValue("@MaDonHang", orderId);
                             break;
 
                         case "Tổng tiền đơn hàng":
                             query = @"
-                                SELECT MaDonHang, SUM(SoLuong * DonGia) AS TongTien
-                                FROM ChiTietDonHang
-                                WHERE MaDonHang = @MaDonHang
-                                GROUP BY MaDonHang";
+                        SELECT 
+                            MaDonHang,
+                            TongTien
+                        FROM DonHang
+                        WHERE MaDonHang = @MaDonHang";
                             adapter.SelectCommand = new SqlCommand(query, conn);
                             adapter.SelectCommand.Parameters.AddWithValue("@MaDonHang", orderId);
                             break;
 
                         case "Top 5 sách bán chạy":
                             query = @"
-                                SELECT s.MaSach, s.TenSach, SUM(ct.SoLuong) AS TongBan
-                                FROM ChiTietDonHang ct
-                                JOIN Sach s ON ct.MaSach = s.MaSach
-                                GROUP BY s.MaSach, s.TenSach
-                                ORDER BY TongBan DESC
-                                OFFSET 0 ROWS FETCH NEXT 5 ROWS ONLY";
+                        SELECT TOP 5
+                            s.MaSach,
+                            s.TenSach,
+                            SUM(ctdh.SoLuong) AS TongSoLuongBan
+                        FROM ChiTietDonHang ctdh
+                        JOIN Sach s ON ctdh.MaSach = s.MaSach
+                        GROUP BY s.MaSach, s.TenSach
+                        ORDER BY TongSoLuongBan DESC";
                             break;
 
                         case "Khách hàng mua nhiều nhất":
                             query = @"
-                                SELECT kh.MaKhachHang, kh.TenKhachHang, COUNT(dh.MaDonHang) AS SoDonHang
-                                FROM KhachHang kh
-                                JOIN DonHang dh ON kh.MaKhachHang = dh.MaKhachHang
-                                GROUP BY kh.MaKhachHang, kh.TenKhachHang
-                                ORDER BY SoDonHang DESC
-                                OFFSET 0 ROWS FETCH NEXT 4 ROWS ONLY";
+                        SELECT TOP 1
+                            kh.MaKhachHang,
+                            kh.HoTen,
+                            COUNT(dh.MaDonHang) AS SoLuongDonHang
+                        FROM KhachHang kh
+                        LEFT JOIN DonHang dh ON kh.MaKhachHang = dh.MaKhachHang
+                        GROUP BY kh.MaKhachHang, kh.HoTen
+                        ORDER BY SoLuongDonHang DESC";
                             break;
                     }
 
@@ -136,11 +268,13 @@ namespace database
                     {
                         dataGridViewResults.Columns["MaDonHang"].HeaderText = "Mã Đơn Hàng";
                         dataGridViewResults.Columns["NgayDatHang"].HeaderText = "Ngày Đặt Hàng";
+                        dataGridViewResults.Columns["TongTien"].HeaderText = "Tổng Tiền";
+                        dataGridViewResults.Columns["TrangThai"].HeaderText = "Trạng Thái";
                         dataGridViewResults.Columns["TenKhachHang"].HeaderText = "Tên Khách Hàng";
                     }
                     else if (selectedQuery == "Chi tiết đơn hàng")
                     {
-                        dataGridViewResults.Columns["MaChiTiet"].HeaderText = "Mã Chi Tiết";
+                        dataGridViewResults.Columns["MaChiTietDonHang"].HeaderText = "Mã Chi Tiết";
                         dataGridViewResults.Columns["TenSach"].HeaderText = "Tên Sách";
                         dataGridViewResults.Columns["SoLuong"].HeaderText = "Số Lượng";
                         dataGridViewResults.Columns["DonGia"].HeaderText = "Đơn Giá";
@@ -155,13 +289,13 @@ namespace database
                     {
                         dataGridViewResults.Columns["MaSach"].HeaderText = "Mã Sách";
                         dataGridViewResults.Columns["TenSach"].HeaderText = "Tên Sách";
-                        dataGridViewResults.Columns["TongBan"].HeaderText = "Tổng Bán";
+                        dataGridViewResults.Columns["TongSoLuongBan"].HeaderText = "Tổng Số Lượng Bán";
                     }
                     else if (selectedQuery == "Khách hàng mua nhiều nhất")
                     {
                         dataGridViewResults.Columns["MaKhachHang"].HeaderText = "Mã Khách Hàng";
-                        dataGridViewResults.Columns["TenKhachHang"].HeaderText = "Tên Khách Hàng";
-                        dataGridViewResults.Columns["SoDonHang"].HeaderText = "Số Đơn Hàng";
+                        dataGridViewResults.Columns["HoTen"].HeaderText = "Tên Khách Hàng";
+                        dataGridViewResults.Columns["SoLuongDonHang"].HeaderText = "Số Đơn Hàng";
                     }
                     dataGridViewResults.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 }

@@ -8,12 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Reflection.Emit;
 
 namespace database
 {
     public partial class Form1 : Form
     {
-        string connectionString = @"Server=DESKTOP-555IDLF\NGUYEN;Database=Nghia;Trusted_Connection=True;";
+        string connectionString = @"Server=DESKTOP-555IDLF\NGUYEN;Database=dtb;Trusted_Connection=True;";
         SqlConnection conn;
         SqlDataAdapter adapter;
         DataTable dt;
@@ -71,7 +72,7 @@ namespace database
         }
         private void LoadData()
         {
-            string connectionString = @"Server=DESKTOP-555IDLF\NGUYEN;Database=Nghia;Trusted_Connection=True;";
+            string connectionString = @"Server=DESKTOP-555IDLF\NGUYEN;Database=dtb;Trusted_Connection=True;";
             conn = new SqlConnection(connectionString);
 
             string query = "SELECT * FROM Sach";
@@ -88,9 +89,8 @@ namespace database
         }
         private void lblTitle_Click(object sender, EventArgs e)
         {
-
+            lblTitle.Top = (this.ClientSize.Height - lblTitle.Height) / 2;
         }
-
         private void truyVấnToolStripMenuItem_Click(object sender, EventArgs e)
         {
             TruyVanDuLieu truyVanDuLieu = new TruyVanDuLieu();

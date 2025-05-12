@@ -21,16 +21,15 @@
             menuTheLoai = new ToolStripMenuItem();
             menuNhanVien = new ToolStripMenuItem();
             menuKhachHang = new ToolStripMenuItem();
-            truyVấnDữLiệuToolStripMenuItem = new ToolStripMenuItem();
             menuQuanLyKho = new ToolStripMenuItem();
             menuPhieuKho = new ToolStripMenuItem();
             menuHangTonKho = new ToolStripMenuItem();
             menuQuanLyDonHang = new ToolStripMenuItem();
             menuDonHang = new ToolStripMenuItem();
             menuChiTietDonHang = new ToolStripMenuItem();
+            truyVấnToolStripMenuItem = new ToolStripMenuItem();
             lblTitle = new Label();
             dataGridViewData1 = new DataGridView();
-            truyVấnToolStripMenuItem = new ToolStripMenuItem();
             menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewData1).BeginInit();
             SuspendLayout();
@@ -46,7 +45,7 @@
             // 
             // menuQuanLyDuLieu
             // 
-            menuQuanLyDuLieu.DropDownItems.AddRange(new ToolStripItem[] { menuSach, menuTheLoai, menuNhanVien, menuKhachHang, truyVấnDữLiệuToolStripMenuItem });
+            menuQuanLyDuLieu.DropDownItems.AddRange(new ToolStripItem[] { menuSach, menuTheLoai, menuNhanVien, menuKhachHang });
             menuQuanLyDuLieu.Name = "menuQuanLyDuLieu";
             menuQuanLyDuLieu.Size = new Size(130, 24);
             menuQuanLyDuLieu.Text = "Quản Lý Dữ Liệu";
@@ -54,36 +53,30 @@
             // menuSach
             // 
             menuSach.Name = "menuSach";
-            menuSach.Size = new Size(203, 26);
+            menuSach.Size = new Size(224, 26);
             menuSach.Text = "Sách";
             menuSach.Click += menuSach_Click;
             // 
             // menuTheLoai
             // 
             menuTheLoai.Name = "menuTheLoai";
-            menuTheLoai.Size = new Size(203, 26);
+            menuTheLoai.Size = new Size(224, 26);
             menuTheLoai.Text = "Thể Loại";
             menuTheLoai.Click += menuTheLoai_Click;
             // 
             // menuNhanVien
             // 
             menuNhanVien.Name = "menuNhanVien";
-            menuNhanVien.Size = new Size(203, 26);
+            menuNhanVien.Size = new Size(224, 26);
             menuNhanVien.Text = "Nhân Viên";
             menuNhanVien.Click += menuNhanVien_Click;
             // 
             // menuKhachHang
             // 
             menuKhachHang.Name = "menuKhachHang";
-            menuKhachHang.Size = new Size(203, 26);
+            menuKhachHang.Size = new Size(224, 26);
             menuKhachHang.Text = "Khách Hàng";
             menuKhachHang.Click += menuKhachHang_Click;
-            // 
-            // truyVấnDữLiệuToolStripMenuItem
-            // 
-            truyVấnDữLiệuToolStripMenuItem.Name = "truyVấnDữLiệuToolStripMenuItem";
-            truyVấnDữLiệuToolStripMenuItem.Size = new Size(203, 26);
-            truyVấnDữLiệuToolStripMenuItem.Text = "Truy Vấn Dữ Liệu";
             // 
             // menuQuanLyKho
             // 
@@ -127,12 +120,19 @@
             menuChiTietDonHang.Text = "Chi Tiết Đơn Hàng";
             menuChiTietDonHang.Click += menuChiTietDonHang_Click;
             // 
+            // truyVấnToolStripMenuItem
+            // 
+            truyVấnToolStripMenuItem.Name = "truyVấnToolStripMenuItem";
+            truyVấnToolStripMenuItem.Size = new Size(79, 24);
+            truyVấnToolStripMenuItem.Text = "Truy Vấn";
+            truyVấnToolStripMenuItem.Click += truyVấnToolStripMenuItem_Click;
+            // 
             // lblTitle
             // 
             lblTitle.Anchor = AnchorStyles.Top;
             lblTitle.Font = new Font("Arial", 16F, FontStyle.Bold);
             lblTitle.ImageAlign = ContentAlignment.TopCenter;
-            lblTitle.Location = new Point(247, 57);
+            lblTitle.Location = new Point(271, 61);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(394, 32);
             lblTitle.TabIndex = 3;
@@ -149,17 +149,11 @@
             dataGridViewData1.Size = new Size(935, 413);
             dataGridViewData1.TabIndex = 4;
             // 
-            // truyVấnToolStripMenuItem
-            // 
-            truyVấnToolStripMenuItem.Name = "truyVấnToolStripMenuItem";
-            truyVấnToolStripMenuItem.Size = new Size(79, 24);
-            truyVấnToolStripMenuItem.Text = "Truy Vấn";
-            truyVấnToolStripMenuItem.Click += truyVấnToolStripMenuItem_Click;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Control;
             ClientSize = new Size(959, 556);
             Controls.Add(dataGridViewData1);
             Controls.Add(lblTitle);
@@ -189,7 +183,6 @@
         private ToolStripMenuItem menuChiTietDonHang;
         private Label lblTitle;
         private DataGridView dataGridViewData1;
-        private ToolStripMenuItem truyVấnDữLiệuToolStripMenuItem;
         private ToolStripMenuItem truyVấnToolStripMenuItem;
     }
 }

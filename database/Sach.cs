@@ -13,7 +13,7 @@ namespace database
 {
     public partial class Sach : Form
     {
-        string connectionString = @"Server=DESKTOP-555IDLF\NGUYEN;Database=Nghia;Trusted_Connection=True;";
+        string connectionString = @"Server=DESKTOP-555IDLF\NGUYEN;Database=dtb;Trusted_Connection=True;";
         SqlConnection conn;
         SqlDataAdapter adapter;
         DataTable dt;
@@ -30,7 +30,7 @@ namespace database
         }
         private void LoadData()
         {
-            string connectionString = @"Server=DESKTOP-555IDLF\NGUYEN;Database=Nghia;Trusted_Connection=True;";
+            string connectionString = @"Server=DESKTOP-555IDLF\NGUYEN;Database=dtb;Trusted_Connection=True;";
             conn = new SqlConnection(connectionString);
 
             string query = "SELECT * FROM Sach";
@@ -64,6 +64,18 @@ namespace database
             if (dataGridView1.CurrentRow != null)
             {
                 dataGridView1.Rows.Remove(dataGridView1.CurrentRow);
+            }
+            try
+            {
+                adapter.Update(dt);
+                MessageBox.Show("Đã lưu thay đổi!");
+                OnDataUpdated?.Invoke();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
             }
         }
     }
